@@ -31,6 +31,8 @@ public class FrmDashboard extends javax.swing.JFrame {
         lblPlayer1 = new javax.swing.JLabel();
         lblPlayer2 = new javax.swing.JLabel();
         pnlHeader = new javax.swing.JPanel();
+        btnStart = new javax.swing.JButton();
+        btnRollDice = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Mario Kart Simulator");
@@ -83,15 +85,38 @@ public class FrmDashboard extends javax.swing.JFrame {
 
         getContentPane().add(pnlBody, java.awt.BorderLayout.PAGE_END);
 
+        btnStart.setBackground(new java.awt.Color(102, 102, 255));
+        btnStart.setFont(new java.awt.Font("Menlo", 1, 25)); // NOI18N
+        btnStart.setForeground(new java.awt.Color(255, 255, 255));
+        btnStart.setText("START");
+        btnStart.setAlignmentY(0.0F);
+        btnStart.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        btnRollDice.setBackground(new java.awt.Color(204, 204, 204));
+        btnRollDice.setFont(new java.awt.Font("Menlo", 1, 20)); // NOI18N
+        btnRollDice.setForeground(new java.awt.Color(255, 255, 255));
+        btnRollDice.setText("Roll Dice!");
+        btnRollDice.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
         javax.swing.GroupLayout pnlHeaderLayout = new javax.swing.GroupLayout(pnlHeader);
         pnlHeader.setLayout(pnlHeaderLayout);
         pnlHeaderLayout.setHorizontalGroup(
             pnlHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1327, Short.MAX_VALUE)
+            .addGroup(pnlHeaderLayout.createSequentialGroup()
+                .addGap(98, 98, 98)
+                .addComponent(btnRollDice, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(267, 267, 267)
+                .addComponent(btnStart, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(592, Short.MAX_VALUE))
         );
         pnlHeaderLayout.setVerticalGroup(
             pnlHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 104, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHeaderLayout.createSequentialGroup()
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addGroup(pnlHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnStart, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRollDice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
 
         getContentPane().add(pnlHeader, java.awt.BorderLayout.CENTER);
@@ -135,6 +160,8 @@ public class FrmDashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRollDice;
+    private javax.swing.JButton btnStart;
     private javax.swing.JLabel lblPlayer1;
     private javax.swing.JLabel lblPlayer2;
     private javax.swing.JPanel pnlBody;
