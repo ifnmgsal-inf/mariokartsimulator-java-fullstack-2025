@@ -105,8 +105,5 @@
 
 <h3>----</h3>
 
-<h3>📋 Plano de Atividades:</h3>
-<a href="./activities.md">Link para as atividades a serem desenvolvidas</a>
-
 <h3>----</h3>
 <p>Inspired by <a href="https://github.com/digitalinnovationone/formacao-nodejs/tree/main/03-projeto-mario-kart">formacao-nodejs/03-projeto-mario-kart</a></p>
