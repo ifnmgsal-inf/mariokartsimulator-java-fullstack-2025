@@ -12,7 +12,7 @@
         </tr>
     </table>
 
-<h2>Personagens</h2>
+<h2>Alguns dos Personagens</h2>
       <table style="border-collapse: collapse; width: 800px; margin: 0 auto;">
         <tr>
             <td style="border: 1px solid black; text-align: center;">

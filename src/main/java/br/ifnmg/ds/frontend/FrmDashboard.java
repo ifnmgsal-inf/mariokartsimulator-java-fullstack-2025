@@ -30,6 +30,13 @@ public class FrmDashboard extends javax.swing.JFrame {
         pnlPlayers = new javax.swing.JPanel();
         lblPlayer1 = new javax.swing.JLabel();
         lblPlayer2 = new javax.swing.JLabel();
+        cbbPlayers = new javax.swing.JComboBox<>();
+        pnlSkills = new javax.swing.JPanel();
+        lblSpeedPlayer1 = new javax.swing.JLabel();
+        lblManueverabilityPlayer1 = new javax.swing.JLabel();
+        lblPowerPlayer1 = new javax.swing.JLabel();
+        lblImgPlayer02 = new javax.swing.JLabel();
+        lblImgPlayer01 = new javax.swing.JLabel();
         pnlHeader = new javax.swing.JPanel();
         btnStart = new javax.swing.JButton();
         btnRollDice = new javax.swing.JButton();
@@ -38,35 +45,93 @@ public class FrmDashboard extends javax.swing.JFrame {
         setTitle("Mario Kart Simulator");
         setResizable(false);
 
-        lblPlayer1.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
-        lblPlayer1.setText("Player 1 - YOU");
+        pnlBody.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        lblPlayer2.setFont(new java.awt.Font("Rockwell", 0, 15)); // NOI18N
+        pnlPlayers.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        lblPlayer1.setFont(new java.awt.Font("Rockwell", 0, 16)); // NOI18N
+        lblPlayer1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPlayer1.setText("Player 1 - YOU");
+        lblPlayer1.setAlignmentY(0.0F);
+        lblPlayer1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        lblPlayer2.setFont(new java.awt.Font("Rockwell", 0, 16)); // NOI18N
         lblPlayer2.setText("Player 2 - Computer");
+
+        cbbPlayers.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mario", "Bowser", "Toad", "Luighi" }));
+
+        pnlSkills.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
+        lblSpeedPlayer1.setFont(new java.awt.Font("Helvetica Neue", 0, 15)); // NOI18N
+        lblSpeedPlayer1.setText("Speed: 4");
+
+        lblManueverabilityPlayer1.setFont(new java.awt.Font("Helvetica Neue", 0, 15)); // NOI18N
+        lblManueverabilityPlayer1.setText("Manueverability: 3");
+
+        lblPowerPlayer1.setFont(new java.awt.Font("Helvetica Neue", 0, 15)); // NOI18N
+        lblPowerPlayer1.setText("Power: 3");
+
+        javax.swing.GroupLayout pnlSkillsLayout = new javax.swing.GroupLayout(pnlSkills);
+        pnlSkills.setLayout(pnlSkillsLayout);
+        pnlSkillsLayout.setHorizontalGroup(
+            pnlSkillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSkillsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlSkillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblSpeedPlayer1)
+                    .addComponent(lblManueverabilityPlayer1)
+                    .addComponent(lblPowerPlayer1))
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+        pnlSkillsLayout.setVerticalGroup(
+            pnlSkillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSkillsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblSpeedPlayer1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblManueverabilityPlayer1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblPowerPlayer1)
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout pnlPlayersLayout = new javax.swing.GroupLayout(pnlPlayers);
         pnlPlayers.setLayout(pnlPlayersLayout);
         pnlPlayersLayout.setHorizontalGroup(
             pnlPlayersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlPlayersLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPlayersLayout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
                 .addGroup(pnlPlayersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlPlayersLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(lblPlayer1))
-                    .addGroup(pnlPlayersLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(lblPlayer2)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                    .addComponent(lblPlayer2)
+                    .addComponent(pnlSkills, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
+            .addGroup(pnlPlayersLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(pnlPlayersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cbbPlayers, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         pnlPlayersLayout.setVerticalGroup(
             pnlPlayersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPlayersLayout.createSequentialGroup()
                 .addGap(49, 49, 49)
-                .addComponent(lblPlayer1)
-                .addGap(175, 175, 175)
-                .addComponent(lblPlayer2)
-                .addContainerGap(278, Short.MAX_VALUE))
+                .addComponent(lblPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cbbPlayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlSkills, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71)
+                .addComponent(lblPlayer2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        lblImgPlayer02.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/bowser-face.png"))); // NOI18N
+
+        lblImgPlayer01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblImgPlayer01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/mario-face.png"))); // NOI18N
+        lblImgPlayer01.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblImgPlayer01.setSize(new java.awt.Dimension(151, 151));
 
         javax.swing.GroupLayout pnlBodyLayout = new javax.swing.GroupLayout(pnlBody);
         pnlBody.setLayout(pnlBodyLayout);
@@ -74,13 +139,23 @@ public class FrmDashboard extends javax.swing.JFrame {
             pnlBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBodyLayout.createSequentialGroup()
                 .addComponent(pnlPlayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1139, Short.MAX_VALUE))
+                .addGap(53, 53, 53)
+                .addGroup(pnlBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblImgPlayer02)
+                    .addComponent(lblImgPlayer01))
+                .addGap(0, 903, Short.MAX_VALUE))
         );
         pnlBodyLayout.setVerticalGroup(
             pnlBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBodyLayout.createSequentialGroup()
                 .addComponent(pnlPlayers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBodyLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(lblImgPlayer01)
+                .addGap(88, 88, 88)
+                .addComponent(lblImgPlayer02)
+                .addContainerGap(138, Short.MAX_VALUE))
         );
 
         getContentPane().add(pnlBody, java.awt.BorderLayout.PAGE_END);
@@ -112,7 +187,7 @@ public class FrmDashboard extends javax.swing.JFrame {
         pnlHeaderLayout.setVerticalGroup(
             pnlHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHeaderLayout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnStart, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRollDice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -162,10 +237,17 @@ public class FrmDashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRollDice;
     private javax.swing.JButton btnStart;
+    private javax.swing.JComboBox<String> cbbPlayers;
+    private javax.swing.JLabel lblImgPlayer01;
+    private javax.swing.JLabel lblImgPlayer02;
+    private javax.swing.JLabel lblManueverabilityPlayer1;
     private javax.swing.JLabel lblPlayer1;
     private javax.swing.JLabel lblPlayer2;
+    private javax.swing.JLabel lblPowerPlayer1;
+    private javax.swing.JLabel lblSpeedPlayer1;
     private javax.swing.JPanel pnlBody;
     private javax.swing.JPanel pnlHeader;
     private javax.swing.JPanel pnlPlayers;
+    private javax.swing.JPanel pnlSkills;
     // End of variables declaration//GEN-END:variables
 }
