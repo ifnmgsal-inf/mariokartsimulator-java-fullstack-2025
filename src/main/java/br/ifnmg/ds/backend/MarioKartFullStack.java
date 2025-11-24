@@ -15,14 +15,15 @@ import java.util.Scanner;
  * @author leonardosilva
  */
 public class MarioKartFullStack {
+    private static final String FILE_NAME = "data/characters.csv";
 
-    public static List<Character> csvToList(String csvFileName) throws FileNotFoundException {
+    public static List<Character> csvToList() throws FileNotFoundException {
         List<Character> myList = new ArrayList<>();
-        File csvfile = new File(csvFileName);
+        File csvfile = new File(FILE_NAME);
         try (Scanner sc = new Scanner(csvfile)) {
             while (sc.hasNext()) {
                 String line = sc.nextLine();
-                String[] data = line.split(";");
+                String[] data = line.split(",");
                 int id = Integer.parseInt(data[0]);
                 String name = data[1];
                 int speed = Integer.parseInt(data[2]);
@@ -32,7 +33,6 @@ public class MarioKartFullStack {
 
                 Character c = new Character(id, name, speed, maneuverability, power, image);
                 myList.add(c);
-                //System.out.println(quiz);
             }
         }
         return myList;
