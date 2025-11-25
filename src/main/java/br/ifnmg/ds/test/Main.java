@@ -30,7 +30,7 @@ public class Main {
                 System.out.println(c);
             }
         } catch (FileNotFoundException ex) {
-            System.out.println("Arquivo CSV n");
+            System.out.println("Arquivo CSV nao encontrado!");
         }        
     }
     
