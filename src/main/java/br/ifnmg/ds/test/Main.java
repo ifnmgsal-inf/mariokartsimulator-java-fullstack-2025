@@ -3,24 +3,54 @@
  */
 package br.ifnmg.ds.test;
 
-import static br.ifnmg.ds.backend.MarioKartFullStack.csvToList;
 import br.ifnmg.ds.backend.Character;
+import br.ifnmg.ds.backend.MarioKartFullStack;
 import java.io.FileNotFoundException;
 import java.util.List;
+import static br.ifnmg.ds.backend.MarioKartFullStack.getAllCharacters;
 
 /**
  *
  * @author leonardoã
  */
 public class Main {
+    private static List<Character> characterList;
+    
     public static void main(String[] args) {
+        getAllCharactersTest();
+        getRandomTrackTypeTest();
+        getRandomCharacterTest();
+        getRandomDiceTest();
+    }
+    
+    private static void getAllCharactersTest() {
         try {
-            List<Character> characterList = csvToList();
+            characterList = getAllCharacters();
             for (Character c : characterList) {
                 System.out.println(c);
             }
         } catch (FileNotFoundException ex) {
             System.out.println("Arquivo CSV n");
-        }
+        }        
     }
+    
+    private static void getRandomTrackTypeTest() {
+        int trackType = MarioKartFullStack.getRandomNumber(MarioKartFullStack.TRACK_NAME.length);
+        
+        System.out.println("A pista sorteada foi: " + MarioKartFullStack.TRACK_NAME[trackType]);
+    }
+
+    private static void getRandomCharacterTest() {
+        Character player1 = MarioKartFullStack.getRandomCharacter(characterList, null);
+        Character player2 = MarioKartFullStack.getRandomCharacter(characterList, player1);
+        
+        System.out.println("Personagens sorteados: " + player1.getName() + " e " + player2.getName());
+    }
+    
+    private static void getRandomDiceTest() {
+        int diceNumber = MarioKartFullStack.getRandomNumber(MarioKartFullStack.DICE_SIDES)+1;
+        
+        System.out.println("O valor dorteado no dado foi: " + diceNumber);
+    }
+
 }
