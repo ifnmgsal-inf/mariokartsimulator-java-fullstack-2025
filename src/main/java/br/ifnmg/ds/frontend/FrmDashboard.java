@@ -35,8 +35,14 @@ public class FrmDashboard extends javax.swing.JFrame {
         lblSpeedPlayer1 = new javax.swing.JLabel();
         lblManueverabilityPlayer1 = new javax.swing.JLabel();
         lblPowerPlayer1 = new javax.swing.JLabel();
+        pnlSkills1 = new javax.swing.JPanel();
+        lblSpeedPlayer2 = new javax.swing.JLabel();
+        lblManueverabilityPlayer2 = new javax.swing.JLabel();
+        lblPowerPlayer2 = new javax.swing.JLabel();
+        tfPlayer2 = new javax.swing.JTextField();
         lblImgPlayer02 = new javax.swing.JLabel();
         lblImgPlayer01 = new javax.swing.JLabel();
+        lblImgPlayer3 = new javax.swing.JLabel();
         pnlHeader = new javax.swing.JPanel();
         btnStart = new javax.swing.JButton();
         btnRollDice = new javax.swing.JButton();
@@ -63,13 +69,13 @@ public class FrmDashboard extends javax.swing.JFrame {
         pnlSkills.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         lblSpeedPlayer1.setFont(new java.awt.Font("Helvetica Neue", 0, 15)); // NOI18N
-        lblSpeedPlayer1.setText("Speed: 4");
+        lblSpeedPlayer1.setText("Speed: 5");
 
         lblManueverabilityPlayer1.setFont(new java.awt.Font("Helvetica Neue", 0, 15)); // NOI18N
-        lblManueverabilityPlayer1.setText("Manueverability: 3");
+        lblManueverabilityPlayer1.setText("Manueverability: 2");
 
         lblPowerPlayer1.setFont(new java.awt.Font("Helvetica Neue", 0, 15)); // NOI18N
-        lblPowerPlayer1.setText("Power: 3");
+        lblPowerPlayer1.setText("Power: 5");
 
         javax.swing.GroupLayout pnlSkillsLayout = new javax.swing.GroupLayout(pnlSkills);
         pnlSkills.setLayout(pnlSkillsLayout);
@@ -95,22 +101,68 @@ public class FrmDashboard extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
+        pnlSkills1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
+        lblSpeedPlayer2.setFont(new java.awt.Font("Helvetica Neue", 0, 15)); // NOI18N
+        lblSpeedPlayer2.setText("Speed: 4");
+
+        lblManueverabilityPlayer2.setFont(new java.awt.Font("Helvetica Neue", 0, 15)); // NOI18N
+        lblManueverabilityPlayer2.setText("Manueverability: 3");
+
+        lblPowerPlayer2.setFont(new java.awt.Font("Helvetica Neue", 0, 15)); // NOI18N
+        lblPowerPlayer2.setText("Power: 3");
+
+        javax.swing.GroupLayout pnlSkills1Layout = new javax.swing.GroupLayout(pnlSkills1);
+        pnlSkills1.setLayout(pnlSkills1Layout);
+        pnlSkills1Layout.setHorizontalGroup(
+            pnlSkills1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSkills1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlSkills1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblSpeedPlayer2)
+                    .addComponent(lblManueverabilityPlayer2)
+                    .addComponent(lblPowerPlayer2))
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+        pnlSkills1Layout.setVerticalGroup(
+            pnlSkills1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSkills1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblSpeedPlayer2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblManueverabilityPlayer2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblPowerPlayer2)
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+
+        tfPlayer2.setText("Bowser");
+        tfPlayer2.setEnabled(false);
+
         javax.swing.GroupLayout pnlPlayersLayout = new javax.swing.GroupLayout(pnlPlayers);
         pnlPlayers.setLayout(pnlPlayersLayout);
         pnlPlayersLayout.setHorizontalGroup(
             pnlPlayersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPlayersLayout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addGroup(pnlPlayersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPlayer2)
-                    .addComponent(pnlSkills, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20))
             .addGroup(pnlPlayersLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(pnlPlayersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cbbPlayers, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPlayersLayout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addGroup(pnlPlayersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPlayer2)
+                    .addComponent(pnlSkills, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlPlayersLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(tfPlayer2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(20, 20, 20))
+            .addGroup(pnlPlayersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPlayersLayout.createSequentialGroup()
+                    .addContainerGap(26, Short.MAX_VALUE)
+                    .addComponent(pnlSkills1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(10, 10, 10)))
         );
         pnlPlayersLayout.setVerticalGroup(
             pnlPlayersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,19 +171,29 @@ public class FrmDashboard extends javax.swing.JFrame {
                 .addComponent(lblPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbbPlayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlSkills, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71)
+                .addGap(191, 191, 191)
                 .addComponent(lblPlayer2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(3, 3, 3)
+                .addComponent(tfPlayer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pnlSkills, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(65, Short.MAX_VALUE))
+            .addGroup(pnlPlayersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlPlayersLayout.createSequentialGroup()
+                    .addGap(123, 123, 123)
+                    .addComponent(pnlSkills1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(307, Short.MAX_VALUE)))
         );
 
-        lblImgPlayer02.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/bowser-face.png"))); // NOI18N
+        lblImgPlayer02.setFont(new java.awt.Font("Liberation Sans", 0, 59)); // NOI18N
+        lblImgPlayer02.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblImgPlayer02.setText("2");
 
         lblImgPlayer01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblImgPlayer01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/mario-face.png"))); // NOI18N
         lblImgPlayer01.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lblImgPlayer01.setSize(new java.awt.Dimension(151, 151));
+
+        lblImgPlayer3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/bowser-face.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlBodyLayout = new javax.swing.GroupLayout(pnlBody);
         pnlBody.setLayout(pnlBodyLayout);
@@ -139,11 +201,19 @@ public class FrmDashboard extends javax.swing.JFrame {
             pnlBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBodyLayout.createSequentialGroup()
                 .addComponent(pnlPlayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
-                .addGroup(pnlBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblImgPlayer02)
-                    .addComponent(lblImgPlayer01))
-                .addGap(0, 903, Short.MAX_VALUE))
+                .addGroup(pnlBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlBodyLayout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addComponent(lblImgPlayer01))
+                    .addGroup(pnlBodyLayout.createSequentialGroup()
+                        .addGap(228, 228, 228)
+                        .addComponent(lblImgPlayer02)))
+                .addGap(0, 720, Short.MAX_VALUE))
+            .addGroup(pnlBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlBodyLayout.createSequentialGroup()
+                    .addGap(287, 287, 287)
+                    .addComponent(lblImgPlayer3)
+                    .addContainerGap(885, Short.MAX_VALUE)))
         );
         pnlBodyLayout.setVerticalGroup(
             pnlBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,11 +221,16 @@ public class FrmDashboard extends javax.swing.JFrame {
                 .addComponent(pnlPlayers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBodyLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(59, 59, 59)
                 .addComponent(lblImgPlayer01)
-                .addGap(88, 88, 88)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblImgPlayer02)
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addGap(92, 92, 92))
+            .addGroup(pnlBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBodyLayout.createSequentialGroup()
+                    .addContainerGap(310, Short.MAX_VALUE)
+                    .addComponent(lblImgPlayer3)
+                    .addGap(93, 93, 93)))
         );
 
         getContentPane().add(pnlBody, java.awt.BorderLayout.PAGE_END);
@@ -240,14 +315,20 @@ public class FrmDashboard extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbbPlayers;
     private javax.swing.JLabel lblImgPlayer01;
     private javax.swing.JLabel lblImgPlayer02;
+    private javax.swing.JLabel lblImgPlayer3;
     private javax.swing.JLabel lblManueverabilityPlayer1;
+    private javax.swing.JLabel lblManueverabilityPlayer2;
     private javax.swing.JLabel lblPlayer1;
     private javax.swing.JLabel lblPlayer2;
     private javax.swing.JLabel lblPowerPlayer1;
+    private javax.swing.JLabel lblPowerPlayer2;
     private javax.swing.JLabel lblSpeedPlayer1;
+    private javax.swing.JLabel lblSpeedPlayer2;
     private javax.swing.JPanel pnlBody;
     private javax.swing.JPanel pnlHeader;
     private javax.swing.JPanel pnlPlayers;
     private javax.swing.JPanel pnlSkills;
+    private javax.swing.JPanel pnlSkills1;
+    private javax.swing.JTextField tfPlayer2;
     // End of variables declaration//GEN-END:variables
 }
