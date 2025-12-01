@@ -8,6 +8,7 @@ import br.ifnmg.ds.backend.MarioKartFullStack;
 import java.io.FileNotFoundException;
 import java.util.List;
 import static br.ifnmg.ds.backend.MarioKartFullStack.getAllCharacters;
+import br.ifnmg.ds.backend.Round;
 
 /**
  *
@@ -21,6 +22,7 @@ public class Main {
         getRandomTrackTypeTest();
         getRandomCharacterTest();
         getRandomDiceTest();
+        getRoundTest();
     }
     
     private static void getAllCharactersTest() {
@@ -51,6 +53,20 @@ public class Main {
         int diceNumber = MarioKartFullStack.getRandomNumber(MarioKartFullStack.DICE_SIDES)+1;
         
         System.out.println("O valor dorteado no dado foi: " + diceNumber);
+    }
+
+    private static void getRoundTest() {
+        Character player1 = MarioKartFullStack.getRandomCharacter(characterList, null);
+        Character player2 = MarioKartFullStack.getRandomCharacter(characterList, player1);    
+        int trackType = MarioKartFullStack.getRandomNumber(MarioKartFullStack.TRACK_NAME.length);
+        int dicePlayer1 = MarioKartFullStack.getRandomNumber(MarioKartFullStack.DICE_SIDES)+1;
+        int dicePlayer2 = MarioKartFullStack.getRandomNumber(MarioKartFullStack.DICE_SIDES)+1;
+        
+        System.out.println("Rodada numero X:");
+        System.out.println("Personagens sorteados: " + player1.getName() + " e " + player2.getName());
+        System.out.println("Tipo de pista: " + MarioKartFullStack.TRACK_NAME[trackType]);
+        Round testRound = MarioKartFullStack.getRound(1, player1, player2, dicePlayer1, dicePlayer1, trackType);
+        System.out.println("Historico da RODADA: " + testRound);
     }
 
 }

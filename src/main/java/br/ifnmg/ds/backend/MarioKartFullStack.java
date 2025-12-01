@@ -82,4 +82,30 @@ public class MarioKartFullStack {
         return MarioKartFullStack.localRandom;
     }
 
+    /**
+     * 4e - Um método que recebe como entrada 6 parâmetros, que são: número da rodada, 
+     * tipo de pista; player1; player2; valor tirado no dado pelo player1; valor tirado no dado pelo player2. 
+     * @param number
+     * @param player1
+     * @param player2
+     * @param dicePlayer1
+     * @param dicePlayer2
+     * @param trackType
+     * @return Esse método deve retornar (saída) uma instância do TAD que representa uma rodada (Round).
+     */
+    public static Round getRound(int number, Character player1, Character player2, int dicePlayer1, int dicePlayer2, int trackType) {
+        int sumPlayer1 = abilityNeeded(trackType, player1) + dicePlayer1;
+        int sumPlayer2 = abilityNeeded(trackType, player2) + dicePlayer2;
+            
+        return new Round(number, player1, player2, sumPlayer1, sumPlayer2, trackType);
+    }
+    
+    private static int abilityNeeded(int trackType, Character player) {
+        return switch (trackType) {
+            case STRAIGHT_LINE -> player.getSpeed();
+            case TURN -> player.getManeuverability();
+            default -> player.getPower();
+        };
+    }
+    
 }
