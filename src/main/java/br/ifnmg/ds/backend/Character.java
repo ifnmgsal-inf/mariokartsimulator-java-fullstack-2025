@@ -11,6 +11,7 @@ public class Character {
     private int maneuverability;
     private int power;
     private String image;
+    private int score;
 
     public Character(int id, String name, int speed, int maneuverability, int power, String image) {
         this.id = id;
@@ -19,6 +20,7 @@ public class Character {
         this.maneuverability = maneuverability;
         this.power = power;
         this.image = image;
+        this.score = 0;
     }
 
     public int getId() {
@@ -45,6 +47,14 @@ public class Character {
         return power;
     }
 
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+    
     @Override
     public String toString() {
         return "Character{" +

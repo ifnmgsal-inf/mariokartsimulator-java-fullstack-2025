@@ -23,6 +23,7 @@ public class Main {
         getRandomCharacterTest();
         getRandomDiceTest();
         getRoundTest();
+        setGlobalScoreTest();
     }
     
     private static void getAllCharactersTest() {
@@ -62,6 +63,7 @@ public class Main {
         int dicePlayer1 = MarioKartFullStack.getRandomNumber(MarioKartFullStack.DICE_SIDES)+1;
         int dicePlayer2 = MarioKartFullStack.getRandomNumber(MarioKartFullStack.DICE_SIDES)+1;
         
+        System.out.println("----------------------");
         System.out.println("Rodada numero X:");
         System.out.println("Personagens sorteados: " + player1.getName() + " e " + player2.getName());
         System.out.println("Tipo de pista: " + MarioKartFullStack.TRACK_NAME[trackType]);
@@ -69,4 +71,25 @@ public class Main {
         System.out.println("Historico da RODADA: " + testRound);
     }
 
+    private static void setGlobalScoreTest() {
+        Character player1 = MarioKartFullStack.getRandomCharacter(characterList, null);
+        Character player2 = MarioKartFullStack.getRandomCharacter(characterList, player1);    
+        int trackType = MarioKartFullStack.getRandomNumber(MarioKartFullStack.TRACK_NAME.length);
+        int dicePlayer1 = MarioKartFullStack.getRandomNumber(MarioKartFullStack.DICE_SIDES)+1;
+        int dicePlayer2 = MarioKartFullStack.getRandomNumber(MarioKartFullStack.DICE_SIDES)+1;
+        
+        System.out.println("----------------------");
+        System.out.println("GLOBAL SCORE:");
+        System.out.println("Personagens sorteados: " + player1.getName() + " e " + player2.getName());
+        System.out.println("Tipo de pista: " + MarioKartFullStack.TRACK_NAME[trackType]);
+        Round testRound = MarioKartFullStack.getRound(1, player1, player2, dicePlayer1, dicePlayer1, trackType);
+        System.out.println("Historico da RODADA: " + testRound);
+        System.out.println("Suponha que o score do player1 seja 0 e o score do player2 seja 2");
+        player1.setScore(0);
+        player2.setScore(2);
+        System.out.println("Updating NEW score");
+        MarioKartFullStack.setGlobalScore(testRound);
+        System.out.println("Score player 1 = " + player1.getScore());
+        System.out.println("Score player 2 = " + player2.getScore());
+    }
 }

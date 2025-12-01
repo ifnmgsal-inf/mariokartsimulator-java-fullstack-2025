@@ -108,4 +108,36 @@ public class MarioKartFullStack {
         };
     }
     
+    /**
+     * 4f - método que recebe como entrada uma instância do TAD que representa uma 
+     * rodada e atualiza o score dos jogadores, conforme as regras da partida.
+     * @param roundData 
+     */
+    public static void setGlobalScore(Round roundData) {
+        if (roundData.getTrackType() == CONFRONTATION) {
+            manageScoreLoss(roundData.getPlayer1(), roundData.getScoringPlayer1(), 
+                    roundData.getPlayer2(), roundData.getScoringPlayer2());
+        } else {
+            manageScoreIncrease(roundData.getPlayer1(), roundData.getScoringPlayer1(), 
+                    roundData.getPlayer2(), roundData.getScoringPlayer2());
+        }
+        
+    }
+    
+    private static void manageScoreLoss(Character player1, int sumPlayer1, Character player2, int sumPlayer2) {
+        if ((sumPlayer1 > sumPlayer2) && (player2.getScore() > 0)) {
+            player2.setScore(player2.getScore() - 1);
+        } else if ((sumPlayer1 < sumPlayer2) && (player1.getScore() > 0)) {
+            player1.setScore(player1.getScore() - 1);
+        }
+    }
+
+    private static void manageScoreIncrease(Character player1, int sumPlayer1, Character player2, int sumPlayer2) {
+        if (sumPlayer1 > sumPlayer2) {
+            player1.setScore(player1.getScore() + 1);
+        } else if (sumPlayer1 < sumPlayer2) {
+            player2.setScore(player2.getScore() + 1);
+        }
+    }
+
 }
