@@ -12,7 +12,7 @@ import br.ifnmg.ds.backend.Round;
 
 /**
  *
- * @author leonardoã
+ * @author leonardo
  */
 public class Main {
     private static List<Character> characterList;
